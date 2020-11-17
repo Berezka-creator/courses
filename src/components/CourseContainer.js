@@ -5,6 +5,12 @@ import InputCourse from "./InputCourse";
 import "../App.css";
 import Flip from "./Flip";
 import { v4 as uuidv4 } from "uuid";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+library.add(faTrash);
 
 
 class CourseContainer extends React.Component {
@@ -36,7 +42,7 @@ class CourseContainer extends React.Component {
             }
         ],
         theme: true,
-        storage:true
+
     };
 
 
@@ -57,11 +63,6 @@ class CourseContainer extends React.Component {
 
         });
     };
-    handleStorage =() =>{
-        this.setState({
-            storage: !this.state.storage
-        });
-    };
     deleteCourse = (id) => {
         this.setState({
             courses:
@@ -80,9 +81,11 @@ class CourseContainer extends React.Component {
             title: title,
             completed: false
         };
-        this.setState({
-            courses: [...this.state.courses, newCourse]
-        });
+        if(title !="") {
+            this.setState({
+                courses: [...this.state.courses, newCourse]
+            });
+        }
     };
 
     render() {

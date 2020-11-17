@@ -19,7 +19,7 @@ class InputCourse extends React.Component{
     render() {
         return (
             <form onSubmit={this.handleSubmit} className='f-container'>
-                <input type="text" className='f-input' placeholder="Add Task..." value={this.state.title} onChange={this.onChange}/>
+                <input type="text" className='f-input' placeholder="Add Course..." value={this.state.title} onChange={this.onChange}/>
                 <input type="submit" value="SUBMIT" className='f-submit'/>
             </form>
         )

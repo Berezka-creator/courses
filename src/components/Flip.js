@@ -18,7 +18,7 @@ class Flip extends React.Component {
                 height={20}
                 width={48}
             />
-            <p>This switch is <b>{this.props.theme ? "on" : "off"}</b></p>
+            <p>Theme: <b>{this.props.theme ? "light" : "dark"}</b></p>
 
 
         </div>

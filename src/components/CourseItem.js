@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class CourseItem extends React.Component{
 
@@ -11,11 +12,11 @@ class CourseItem extends React.Component{
         }
         return(
             <div>
-                <li className="todo-item"><input type="checkbox"
+                <li className="course-item"><input type="checkbox"
                            checked={this.props.course.completed}
                            onChange={() => this.props.handleChangeProps(this.props.course.id)}
                 />
-                <button onClick={() => this.props.deleteCourseProps(this.props.course.id)}>DELETE</button>
+                <FontAwesomeIcon className="favicons" icon = 'trash' onClick={() => this.props.deleteCourseProps(this.props.course.id)} />
                     <span style={this.props.course.completed ? completeStyle : null}>{this.props.course.title}</span>
                 </li>
 
